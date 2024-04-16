@@ -43,7 +43,7 @@ Oloolua_Test repository contains three main programs:
 
 ## Usage
 
-To use this system, upload the respective codes to the Arduino Nano 33 BLE Sense and the WAZIdev boards. Power the system and start detecting sound. The receiver's LCD will display the sound level data in real-time.
+To use this system, upload the respective codes to the Arduino Nano 33 BLE Sense and the WAZIdev boards. Power the system and start detecting sound. The receiver's LCD will display the sound data in real-time.
 
 ## System Images
 

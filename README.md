@@ -10,7 +10,7 @@ Welcome to the repository for our anti-illegal logging research project. Our ini
 
 The anti-illegal logging device is a solar-powered unit that uses LoRa to transmit data and employs edge machine learning techniques to classify audio signals in real-time. By detecting the acoustic signature of chainsaws, the device can trigger alerts and facilitate immediate action against deforestation.
 
-![Device Diagram](i./img/illegal-logging-device.webp)
+![Device Diagram](./img/illegal-logging-device.webp)
 
 ## Key Features
 

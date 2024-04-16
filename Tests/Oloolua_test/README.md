@@ -1,14 +1,14 @@
-# Sound Detector System with Arduino Nano 33 BLE Sense and WAZIdev
+# Sound Detection Device with Arduino Nano 33 BLE Sense and Wazidev board
 
-## Project Overview
+## OLoolua Test Overview
 
-This project features a sound detection system utilizing the Arduino Nano 33 BLE Sense and two WAZIdev boards to transmit sound intensity data over a LoRa network. The Arduino Nano 33 BLE Sense detects sound levels using its built-in MEMS microphone, processes the data, and transmits it to a WAZIdev sender board via I2C. The sender board then relays this data to a WAZIdev receiver using LoRa communication, which displays the results on an LCD screen.
+This Test features a sound detection system utilizing the Arduino Nano 33 BLE Sense and two Wazidev boards to transmit sound intensity data over a LoRa network. The Arduino Nano 33 BLE Sense detects sound levels using its built-in MEMS microphone, processes the data, and transmits it to a WAZIdev sender board via I2C. The sender board then relays this data to a WAZIdev receiver using LoRa communication, which displays the results on an LCD screen.
 
 ## Components
 
 - Arduino Nano 33 BLE Sense
 - 2 WAZIdev boards
-- LCD display (compatible with WAZIdev)
+- LCD display 
 - Connecting wires
 - Power supplies for each component
 
@@ -32,11 +32,11 @@ This project features a sound detection system utilizing the Arduino Nano 33 BLE
 
 ## Diagram of System Architecture
 
-![System Architecture](link_to_your_diagram_image_here)
+![System Architecture](./img/architecture.png)
 
 ## Code
 
-The repository contains three main programs:
+Oloolua_Test repository contains three main programs:
 - `Oloolua_test_nanoble.ino`: Code for Arduino Nano 33 BLE Sense.
 - `Oloolua_test_wazidev_sender.ino`: Code for the WAZIdev sender.
 - `Oloolua_test_wazidev_receiver.ino`: Code for the WAZIdev receiver.
@@ -44,6 +44,15 @@ The repository contains three main programs:
 ## Usage
 
 To use this system, upload the respective codes to the Arduino Nano 33 BLE Sense and the WAZIdev boards. Power the system and start detecting sound. The receiver's LCD will display the sound level data in real-time.
+
+## System Images
+
+<p float="left">
+  <img src="./img/ble and wazidev sendor.jpeg" width="400" />
+  <img src="./img/wazidev receiver.jpeg" width="400" /> 
+</p>
+
+...
 
 ## Contributions
 

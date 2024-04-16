@@ -92,7 +92,7 @@ void loop() {
     }
 
     // Introduce a delay between measurements
-    delay(1000); // Adjust delay as needed
+    delay(700); // Adjust delay as needed
 
     // Clear the read count
     samplesRead = 0;

@@ -12,6 +12,9 @@ const float microphoneSensitivity = -26.0; // dBFS ±3 dB
 const float microphoneSNR = 64.0; // dB
 const float microphoneAOP = 122.5; // dBSPL
 
+// Assume a constant noise floor value (adjust this with real measurements if possible)
+const float estimatedNoiseFloor = -50.0; // dB
+
 // Convert float to bytes
 void floatToBytes(float val, byte* bytes_array) {
   union {
@@ -48,29 +51,28 @@ void loop() {
     // Print samples to the serial monitor
     for (int i = 0; i < samplesRead; i++) {
       // Calculate sound intensity (dB)
-      float intensity = 20 * log10(abs(sampleBuffer[i]));
+      float intensity = 20 * log10(abs(sampleBuffer[i]) / 32768.0); // Normalize to the maximum possible value (16-bit signed integer)
 
       // Calculate SNR (Signal-to-Noise Ratio)
-      float snr = intensity - microphoneSNR;
+      float snr = intensity - estimatedNoiseFloor;
 
       // Calculate RSSI (Received Signal Strength Indicator)
-      float rssi = intensity - microphoneSensitivity;
+      // Adjusted to compare against full scale (0 dBFS)
+      float rssi = intensity - (-26.0); // Maximum value from microphone sensitivity
 
       // Calculate Estimated Distance
-      // Note: This is a simplistic approach and may not accurately reflect real-world distances
       float distance = 100 / (intensity + 0.001); // Adding a small value to prevent division by zero
+
       // Output results
-      delay(1000);
       Serial.print("Sound Intensity (dB): ");
       Serial.println(intensity, 2);
       Serial.print("SNR (dB): ");
       Serial.println(snr, 2);
-      Serial.print("RSSI (dBm): ");
+      Serial.print("RSSI (dB): ");
       Serial.println(rssi, 2);
       Serial.print("Estimated Distance (cm): ");
       Serial.println(distance, 2);
       Serial.println(); // Print an empty line for clarity
-      delay(1000);
 
       // Send data to WaziDev board
       byte data[4];
@@ -90,9 +92,6 @@ void loop() {
 
       Wire.endTransmission(); // End transmission
     }
-
-    // Introduce a delay between measurements
-    delay(700); // Adjust delay as needed
 
     // Clear the read count
     samplesRead = 0;

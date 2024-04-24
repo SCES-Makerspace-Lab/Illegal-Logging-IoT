@@ -23,9 +23,10 @@ The anti-illegal logging device is a solar-powered unit that uses LoRa to transm
 - Solar Panel Array
 - Rechargeable Battery Pack
 - LoRa-Enabled Microcontroller
-- Audio Processing Module
+- Audio Processing Module ( pico or arduino nano 33 ble)
+- microphone
 
-![Hardware Components](images/hardware_components.png)
+<!-- ![Hardware Components](images/hardware_components.png) -->
 
 ## Software Installation
 

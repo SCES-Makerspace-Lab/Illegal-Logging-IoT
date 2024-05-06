@@ -1,6 +1,6 @@
 # LoRa Range Test with GPS on WaziDev
 
-This project is designed to perform a range test for LoRa using the WaziDev board. The sender WaziDev board collects GPS coordinates and sends them to the receiver WaziDev board.
+This devices are designed to perform a range test for LoRa using the WaziDev board. The sender WaziDev board collects GPS coordinates and sends them to the receiver WaziDev board.
 
 ## Components
 

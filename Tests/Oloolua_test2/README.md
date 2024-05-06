@@ -30,3 +30,4 @@ In addition to the GPS data, the receiver also displays the RSSI (Received Signa
 ## Note
 
 Ensure the GPS module is receiving a good signal. If the GPS module is indoors or in a location where it can't get a good signal, it may not be able to provide valid location data.
+Also GPS module requires 5V so they cannot be powered by the wazidev boards 

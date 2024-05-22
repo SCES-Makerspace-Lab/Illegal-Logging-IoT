@@ -7,6 +7,18 @@ This project is designed to perform a range test for LoRa in the Oloolua Forest 
 - 2x WaziDev boards
 - Ultrasonic sensor
 
+## Pin Connections
+###  Ultrasonic Sensor Connections
+- ECHO_PIN - Connect this to digital pin 4 on your wazidev board.
+- TRIG_PIN - Connect this to digital pin 5 on your wazidev  board.
+### LCD I2C Connections
+- SDA (Serial Data Line) - Connect this to the SDA pin on your wazidev board.
+- SCL (Serial Clock Line) - Connect this to the SCL pin on your wazidev  board.
+
+## Diagram of System Architecture
+
+![System Architecture](./img/architecture.png)
+
 ## How it Works
 
 The sender WaziDev board is connected to an ultrasonic sensor. It collects the distance data and sends it over LoRa to the receiver WaziDev board.

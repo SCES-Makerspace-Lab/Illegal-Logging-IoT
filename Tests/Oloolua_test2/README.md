@@ -1,23 +1,24 @@
-# LoRa Range Test with GPS on WaziDev
+# LoRa Range Test in Oloolua Forest with Ultrasonic Sensor and WaziDev
 
-This devices are designed to perform a range test for LoRa using the WaziDev board. The sender WaziDev board collects GPS coordinates and sends them to the receiver WaziDev board.
+This project is designed to perform a range test for LoRa in the Oloolua Forest using the WaziDev board and an ultrasonic sensor. The sender WaziDev board collects distance data from the ultrasonic sensor and sends it to the receiver WaziDev board. The goal is to check the viability of LoRaWAN solutions in forest environments.
 
 ## Components
 
 - 2x WaziDev boards
-- 1x GPS module
+- Ultrasonic sensor
 
 ## How it Works
 
-The sender WaziDev board is connected to a GPS module. It collects the GPS coordinates (latitude and longitude) and the current time in Nairobi. This data is then sent over LoRa to the receiver WaziDev board.
+The sender WaziDev board is connected to an ultrasonic sensor. It collects the distance data and sends it over LoRa to the receiver WaziDev board.
 
-The receiver WaziDev board listens for incoming LoRa packets. When a packet is received, it extracts the GPS coordinates and time from the packet. The received data is displayed on the Serial Monitor and an LCD.
+The receiver WaziDev board listens for incoming LoRa packets. When a packet is received, it extracts the distance data from the packet. The received data is displayed on the Serial Monitor and an LCD.
 
-In addition to the GPS data, the receiver also displays the RSSI (Received Signal Strength Indicator) and SNR (Signal-to-Noise Ratio) of the LoRa connection. These values provide an indication of the quality of the LoRa signal, which can be used to assess the range of the LoRa connection.
+In addition to the distance data, the receiver also displays the RSSI (Received Signal Strength Indicator) and SNR (Signal-to-Noise Ratio) of the LoRa connection. These values provide an indication of the quality of the LoRa signal, which can be used to assess the range and viability of the LoRa connection in the forest environment.
+
+
 
 ## Setup
-
-1. Connect the GPS module to the sender WaziDev board. Connect the GPS TX pin to digital pin 9 and the GPS RX pin to digital pin 11.
+1. Connect the ultrasonic sensor to the sender WaziDev board. Follow the sensor's documentation for the correct wiring.
 
 2. Upload the sender code to the sender WaziDev board.
 
@@ -25,9 +26,12 @@ In addition to the GPS data, the receiver also displays the RSSI (Received Signa
 
 4. Upload the receiver code to the receiver WaziDev board.
 
-5. Open the Serial Monitor for both WaziDev boards. The sender should display the GPS coordinates and time, and the receiver should display the received GPS coordinates, time, RSSI, and SNR.
+5. Open the Serial Monitor for both WaziDev boards. The sender should display the distance data, and the receiver should display the received distance data, RSSI, and SNR.
+
+6. Perform the range test in the Oloolua Forest. Monitor the RSSI and SNR values to assess the quality of the LoRa signal.
+
+
 
 ## Note
 
-Ensure the GPS module is receiving a good signal. If the GPS module is indoors or in a location where it can't get a good signal, it may not be able to provide valid location data.
-Also GPS module requires 5V so they cannot be powered by the wazidev boards 
+Ensure the ultrasonic sensor is correctly calibrated and positioned. If the sensor is not properly set up, it may not provide accurate distance data. Also, ensure that the sensor and the WaziDev boards are powered correctly according to their specifications. Be aware that environmental factors in the forest, such as foliage and terrain, can impact the range and quality of the LoRa signal.
